@@ -5,5 +5,7 @@ module.exports = () => new Promise(async res => {
 
     global.ctx = require(`./createCtx`)();
 
+    ctx.sessions = require(`../bp/sessions`);
+
     res()
 })
