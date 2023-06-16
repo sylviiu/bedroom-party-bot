@@ -1,5 +1,5 @@
 module.exports = (interaction) => new Promise(async (res, rej) => {
-    let generalLocale = require(`../../../lang/en-US/general.json`);
+    let generalLocale = {}
 
     try {
         generalLocale = require(`../../../lang/${interaction.locale}/general.json`)

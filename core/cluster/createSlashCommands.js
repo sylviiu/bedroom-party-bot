@@ -45,7 +45,7 @@ module.exports = (config) => new Promise(async (res, rej) => {
                     if(command.languages[`en-US`].command.options) {
                         console.debug(`| ${command.languages[`en-US`].command.options.length} option(s) exist!`);
     
-                        for(i in command.languages[`en-US`].command.options) {
+                        for(i in command.languages[`en-US`].command.options) try {
                             const opt = command.languages[`en-US`].command.options[i];
     
                             const func = `addStringOption`;
@@ -71,6 +71,14 @@ module.exports = (config) => new Promise(async (res, rej) => {
                                 Object.entries(command.languages).forEach(o => slashDescriptionLocales[o[0]] = o[1].command.options[i].description);
                                 interaction.setDescriptionLocalizations(slashDescriptionLocales);
                                 console.debug(`| - Applied ${Object.keys(slashDescriptionLocales).length} localization(s) for description`);
+
+                                if(opt.choices) {
+                                    console.debug(`| - Adding ${opt.choices.length} ${func.slice(3, -6)} option choices`)
+                                    opt.choices.forEach(choice => {
+                                        console.debug(`| | Setting choice ${choice.name} with value ${choice.value}`)
+                                        interaction.addChoices(choice);
+                                    })
+                                }
     
                                 if(opt.required) {
                                     console.debug(`| - ${func.slice(3, -6)} option is required!`);
@@ -79,6 +87,8 @@ module.exports = (config) => new Promise(async (res, rej) => {
     
                                 return interaction;
                             })
+                        } catch(e) {
+                            console.error(`Failed to add option:`, e)
                         }
                     };
     

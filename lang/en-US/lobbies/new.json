@@ -1,0 +1,28 @@
+{
+    "command": {
+        "name": "new",
+        "description": "Register a new Beat Saber multiplayer lobby.",
+        "options": [
+            {
+                "name": "platform",
+                "description": "Platform (Multiplayer+ / BeatTogether)",
+                "choices": [
+                    {
+                        "name": "Multiplayer+",
+                        "value": "multiplayerplus"
+                    },
+                    {
+                        "name": "BeatTogether",
+                        "value": "beattogether"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "name": "code",
+                "description": "Lobby Code",
+                "required": true
+            }
+        ]
+    }
+}

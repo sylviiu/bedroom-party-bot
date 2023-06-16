@@ -26,7 +26,7 @@ console.debug(`Error handlers: ${handlers.map(o => o.name).join(`, `)}`)
 
 function handler(e) {
     const msgs = {
-        openIssue: `If that doesn't work, please feel free to open an issue at https://github.com/nyx-bot/Nyx/issues`
+        openIssue: `If that doesn't work, please feel free to open an issue at https://github.com/sylviiu/bedroom-party-bot/issues`
     }
 
     const handler = handlers.find(o => o.find(e));

@@ -1,13 +1,14 @@
 {
   "dependencies": {
-    "@discordjs/builders": "^1.4.0",
+    "@discordjs/builders": "^1.6.3",
     "@discordjs/opus": "^0.9.0",
-    "cron": "^2.1.0",
-    "fastify": "^4.6.0",
+    "cron": "^2.3.1",
+    "fastify": "^4.18.0",
+    "ffi-napi": "^4.0.3",
     "ffprobe-client": "^1.1.6",
-    "oceanic.js": "^1.5.0",
-    "sequelize": "^6.22.0",
-    "sqlite3": "^5.1.1",
-    "superagent": "^8.0.0"
+    "oceanic.js": "^1.7.0",
+    "sequelize": "^6.32.0",
+    "sqlite3": "^5.1.6",
+    "superagent": "^8.0.9"
   }
 }
